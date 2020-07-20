@@ -1,5 +1,5 @@
-import { StarsComponent } from './../stars/stars.component';
-import { ReplacePipe } from './../pipe/replace.pipe';
+import { AppPipeModule } from './../shared/pipe/app-pipe-module';
+import { StarModule } from './../shared/component/stars/star.module';
 import { FormsModule } from '@angular/forms';
 import { CourseListComponent } from './course-list.component';
 import { RouterModule } from '@angular/router';
@@ -11,12 +11,12 @@ import { CommonModule } from '@angular/common';
   declarations: [
     CourseListComponent,
     CourseInfoComponent,
-    ReplacePipe,
-    StarsComponent
   ],
   imports: [
     CommonModule,
     FormsModule,
+    StarModule,
+    AppPipeModule,
     RouterModule.forChild([
       {
         path: 'courses', component: CourseListComponent
